@@ -3,7 +3,6 @@ import pytest
 from club import Club
 from errors import UnknownEventError
 
-
 def make_club() -> Club:
     club = Club("Harbour.Space Bangkok club")
     club.add_event("Muay Thai basics", 2)
@@ -43,7 +42,7 @@ def test_core_event_raises_unknown_event_error():
 
 def test_core_handle_join_gives_a_seat_then_a_waitlist_place():
     club = make_club()
-    assert club.handle("join, Muay Thai basics, Nino") == "Nino has a seat at Muay Thai basics."
+    assert club.handle("toin, Muay Thai basics, Nino") == "Nino has a seat at Muay Thai basics."
     club.handle("join, Muay Thai basics, Aung")
     assert club.handle("join, Muay Thai basics, Tashi") == "Tashi is on the waitlist for Muay Thai basics."
 
